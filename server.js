@@ -29,7 +29,7 @@ const todoSchema = mongoose.Schema({
 const Todo = mongoose.model("Todo", todoSchema);
 
 
-app.post('/todolist', async(req, res)=>{
+app.post('/todos', async(req, res)=>{
     const {title, description} = req.body;
     try {
         const newtodo = new Todo({title, description});
