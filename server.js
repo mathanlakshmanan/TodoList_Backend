@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const app = express();
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/todolist").then(()=>{
+mongoose.connect(process.env.DBURL).then(()=>{
     console.log("DB Conneted");
     
 }).catch((err)=>{
